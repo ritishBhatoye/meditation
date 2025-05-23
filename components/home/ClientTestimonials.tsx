@@ -14,7 +14,7 @@ export function ClientTestimonials() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const reviewsRef = useRef<HTMLDivElement>(null);
 
-  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     drag: true,
     slides: { perView: 1, spacing: 15 },
@@ -152,7 +152,7 @@ export function ClientTestimonials() {
               <motion.button
                 onClick={() => {
                   const idx = (current - 1 + reviews.length) % reviews.length;
-                  sliderRef.current?.moveToIdx(idx);
+                  instanceRef.current?.moveToIdx(idx);
                 }}
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-teal-700 transition-colors"
                 whileHover={{ scale: 1.1 }}
@@ -177,7 +177,7 @@ export function ClientTestimonials() {
               <motion.button
                 onClick={() => {
                   const idx = (current + 1) % reviews.length;
-                  sliderRef.current?.moveToIdx(idx);
+                  instanceRef.current?.moveToIdx(idx);
                 }}
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-teal-700 transition-colors"
                 whileHover={{ scale: 1.1 }}
@@ -219,7 +219,7 @@ export function ClientTestimonials() {
           {reviews.map((_, i) => (
             <motion.button
               key={i}
-              onClick={() => sliderRef.current?.moveToIdx(i)}
+              onClick={() => instanceRef.current?.moveToIdx(i)}
               className={`w-2.5 h-2.5 rounded-full transition-all ${
                 i === current
                   ? "bg-teal-500 scale-125"

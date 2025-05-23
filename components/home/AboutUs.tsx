@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 import InfoCard from "@/components/elements/InfoCard";
 import { MeditationHomeAboutUsData } from "@/utils/dummyData/aboutUs";
 
@@ -106,9 +105,6 @@ const HomeAboutUs = () => {
                     ? "px-8 py-4 bg-teal-600 hover:bg-teal-700 text-white rounded-xl transition-colors shadow-lg"
                     : "bg"
                 }
-                headingClassName="text-3xl md:text-4xl font-bold mb-3 text-white"
-                subHeadingClassName="text-teal-400 uppercase tracking-wider text-sm mb-3"
-                contentClassName="text-gray-300 leading-relaxed"
               />
 
               {/* Decorative line after each section except the last */}

@@ -115,19 +115,16 @@ const MeditationYoga = (): React.JSX.Element => {
         <div className="relative bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-xl">
           <AnimatePresence mode="wait">
             {MeditationYogaTabScreenData.map((tabData) => {
-              if (tabData.tabId === activeTab) {
+              if (tabData.id.toString() === activeTab) {
                 return (
                   <motion.div
-                    key={tabData.tabId}
+                    key={tabData.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.4 }}
                   >
-                    <TabScreen
-                      TabScreenData={tabData}
-                      isDarkTheme={true} // Pass theme flag to child component
-                    />
+                    <TabScreen TabScreenData={tabData} />
                   </motion.div>
                 );
               }
