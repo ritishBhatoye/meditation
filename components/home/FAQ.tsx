@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import gsap from "gsap";
 
 const faqData = [
   {
@@ -134,27 +133,7 @@ const Faq = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {
-    // Initial animation for heading
-    gsap.fromTo(
-      headingRef.current,
-      { y: -50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "back.out(1.7)" }
-    );
-
-    // Animate the background elements
-    gsap.fromTo(
-      ".faq-bg-element",
-      { scale: 0, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 0.2,
-        stagger: 0.2,
-        duration: 1.2,
-        ease: "elastic.out(1, 0.5)",
-      }
-    );
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div

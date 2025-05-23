@@ -6,7 +6,6 @@ import {
 } from "@/utils/dummyData/tabs";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState, useRef, useEffect } from "react";
-import gsap from "gsap";
 import TabScreen from "../elements/TabScreen";
 
 const MeditationYoga = (): React.JSX.Element => {
@@ -15,55 +14,9 @@ const MeditationYoga = (): React.JSX.Element => {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const tabsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // Initial animation for section elements
-    gsap.fromTo(
-      headingRef.current,
-      { y: -50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "back.out(1.7)",
-      }
-    );
+  useEffect(() => {}, []);
 
-    // Animate background elements
-    gsap.fromTo(
-      ".tabs-bg-element",
-      { scale: 0, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 0.3,
-        stagger: 0.2,
-        duration: 1.2,
-        ease: "elastic.out(1, 0.5)",
-      }
-    );
-
-    // Animate tabs with a staggered effect
-    gsap.fromTo(
-      tabsRef.current?.querySelectorAll(".tab-button"),
-      { y: 20, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        duration: 0.5,
-        ease: "power2.out",
-      }
-    );
-  }, []);
-
-  // Tab change animation
   const handleTabChange = (tabValue: string) => {
-    // Apply a subtle flash effect to the container
-    gsap.fromTo(
-      ".tab-flash-overlay",
-      { opacity: 0.1 },
-      { opacity: 0, duration: 0.5, ease: "power2.out" }
-    );
-
     setActiveTab(tabValue);
   };
 

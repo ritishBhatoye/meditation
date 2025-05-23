@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useKeenSlider } from "keen-slider/react";
 import { Star } from "lucide-react";
-import { gsap } from "gsap";
 import Image from "next/image";
 import "keen-slider/keen-slider.min.css";
 import { reviews } from "@/utils/dummyData/reviews";
@@ -22,34 +21,7 @@ export function ClientTestimonials() {
     slideChanged: (s) => setCurrent(s.track.details.rel),
   });
 
-  useEffect(() => {
-    // Main title animation
-    gsap.fromTo(
-      titleRef.current,
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    );
-
-    // Animate background elements
-    gsap.fromTo(
-      ".testimonial-decoration",
-      { scale: 0, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 0.15,
-        stagger: 0.2,
-        duration: 1.2,
-        ease: "elastic.out(1, 0.5)",
-      }
-    );
-
-    // Animate the slider container
-    gsap.fromTo(
-      reviewsRef.current,
-      { opacity: 0, x: 50 },
-      { opacity: 1, x: 0, duration: 1, delay: 0.3, ease: "power2.out" }
-    );
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <section ref={sectionRef} className="relative py-24 overflow-hidden">

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import gsap from "gsap";
 
 const slides = [
   {
@@ -51,6 +50,19 @@ const bgImages = [
   "https://images.unsplash.com/photo-1588286840104-8957b019727f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80", // Serene nature
   "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80", // Mountain vista
 ];
+
+const fadeInUpVariants = {
+  hidden: { y: 40, opacity: 0 },
+  visible: (i = 1) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  }),
+};
 
 export default function HeroSection(): React.JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -98,44 +110,44 @@ export default function HeroSection(): React.JSX.Element {
 
   const animateText = () => {
     if (textRef.current) {
-      gsap.fromTo(
-        textRef.current.querySelectorAll(".fadeInUp"),
-        { y: 40, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.1,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      );
+      // gsap.fromTo(
+      //   textRef.current.querySelectorAll(".fadeInUp"),
+      //   { y: 40, opacity: 0 },
+      //   {
+      //     y: 0,
+      //     opacity: 1,
+      //     stagger: 0.1,
+      //     duration: 0.8,
+      //     ease: "power3.out",
+      //   }
+      // );
     }
   };
 
   useEffect(() => {
-    gsap.fromTo(
-      ".bg-bubble",
-      { scale: 0, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 0.4,
-        stagger: 0.3,
-        duration: 1.2,
-        ease: "elastic.out(1, 0.5)",
-      }
-    );
+    // gsap.fromTo(
+    //   ".bg-bubble",
+    //   { scale: 0, opacity: 0 },
+    //   {
+    //     scale: 1,
+    //     opacity: 0.4,
+    //     stagger: 0.3,
+    //     duration: 1.2,
+    //     ease: "elastic.out(1, 0.5)",
+    //   }
+    // );
 
-    gsap.fromTo(
-      ".floating-element",
-      { y: 30, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.2,
-        duration: 1,
-        ease: "back.out(1.7)",
-      }
-    );
+    // gsap.fromTo(
+    //   ".floating-element",
+    //   { y: 30, opacity: 0 },
+    //   {
+    //     y: 0,
+    //     opacity: 1,
+    //     stagger: 0.2,
+    //     duration: 1,
+    //     ease: "back.out(1.7)",
+    //   }
+    // );
 
     animateText();
     return () => instanceRef.current?.destroy();
@@ -251,20 +263,33 @@ export default function HeroSection(): React.JSX.Element {
             ref={textRef}
             className="space-y-8 md:space-y-10 text-center md:text-left"
           >
-            <span
-              className="fadeInUp block text-xl font-semibold tracking-wide bg-gradient-to-r from-green-400 to-teal-400 text-transparent bg-clip-text"
+            <motion.span
+              className="block text-xl font-semibold tracking-wide bg-gradient-to-r from-green-400 to-teal-400 text-transparent bg-clip-text"
               style={{ fontFamily: "'Homemade Apple', cursive" }}
+              variants={fadeInUpVariants}
+              initial="hidden"
+              animate="visible"
             >
               Discover Serenity
-            </span>
-            <h1 className="fadeInUp text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
+            </motion.span>
+            <motion.h1
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight"
+              variants={fadeInUpVariants}
+              initial="hidden"
+              animate="visible"
+            >
               {slides[instanceRef.current?.track.details.rel || 0].title}
-            </h1>
-            <p className="fadeInUp text-base sm:text-lg text-gray-200 max-w-xl mx-auto md:mx-0">
+            </motion.h1>
+            <motion.p
+              className="text-base sm:text-lg text-gray-200 max-w-xl mx-auto md:mx-0"
+              variants={fadeInUpVariants}
+              initial="hidden"
+              animate="visible"
+            >
               {slides[instanceRef.current?.track.details.rel || 0].description}
-            </p>
+            </motion.p>
 
-            <div className="fadeInUp pt-4 pb-3">
+            <div className="pt-4 pb-3">
               <blockquote className="italic text-gray-300 border-l-4 border-teal-500 pl-4 max-w-xl mx-auto md:mx-0">
                 <p
                   style={{ fontFamily: "'Homemade Apple', cursive" }}
@@ -278,7 +303,7 @@ export default function HeroSection(): React.JSX.Element {
             </div>
 
             {/* Practice types with count */}
-            <div className="fadeInUp grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-xl mx-auto md:mx-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-xl mx-auto md:mx-0">
               {practices.map((practice) => (
                 <motion.div
                   key={practice.name}
@@ -287,6 +312,9 @@ export default function HeroSection(): React.JSX.Element {
                     y: -5,
                     boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1)",
                   }}
+                  variants={fadeInUpVariants}
+                  initial="hidden"
+                  animate="visible"
                 >
                   <p className="font-semibold text-teal-300">{practice.name}</p>
                   <p className="text-sm text-gray-300">{practice.count}</p>
@@ -294,11 +322,14 @@ export default function HeroSection(): React.JSX.Element {
               ))}
             </div>
 
-            <div className="fadeInUp flex flex-col sm:flex-row gap-6 pt-8 justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-row gap-6 pt-8 justify-center md:justify-start">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-teal-600 text-white px-8 py-4 sm:py-5 rounded-xl font-medium shadow-lg hover:bg-teal-700 transition"
+                variants={fadeInUpVariants}
+                initial="hidden"
+                animate="visible"
               >
                 Begin Your Journey
               </motion.button>
@@ -306,15 +337,18 @@ export default function HeroSection(): React.JSX.Element {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-white/50 text-white px-8 py-4 sm:py-5 rounded-xl font-medium hover:border-white hover:bg-white/10 transition"
+                variants={fadeInUpVariants}
+                initial="hidden"
+                animate="visible"
               >
                 Learn More
               </motion.button>
             </div>
 
             <motion.div
-              className="fadeInUp hidden md:flex justify-center md:justify-start items-center space-x-2 pt-4 text-gray-400"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              className="hidden md:flex justify-center md:justify-start items-center space-x-2 pt-4 text-gray-400"
+              initial="hidden"
+              animate="visible"
               transition={{ delay: 1 }}
             >
               <div className="h-[1px] w-10 bg-gray-500"></div>

@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import gsap from "gsap";
 import Image from "next/image";
 import InfoCard from "@/components/elements/InfoCard";
 import { MeditationHomeAboutUsData } from "@/utils/dummyData/aboutUs";
@@ -12,23 +11,7 @@ const HomeAboutUs = () => {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
-  useEffect(() => {
-    if (isInView && sectionRef.current) {
-      // Animate section background
-      gsap.fromTo(
-        ".about-gradient-overlay",
-        { opacity: 0 },
-        { opacity: 1, duration: 1.5, ease: "power2.inOut" }
-      );
-
-      // Animate heading
-      gsap.fromTo(
-        headingRef.current,
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: "back.out(1.7)" }
-      );
-    }
-  }, [isInView]);
+  useEffect(() => {}, [isInView]);
 
   return (
     <div

@@ -2,7 +2,6 @@
 
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
 
 const stats = [
   { number: 120, suffix: "+", label: "Retreats Conducted", icon: "🧘" },
@@ -63,27 +62,7 @@ const AnimatedNumber = ({
 const MetricsDisplay = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // Animate background elements when component mounts
-    gsap.fromTo(
-      ".metrics-decoration",
-      { scale: 0, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 0.15,
-        stagger: 0.2,
-        duration: 1.2,
-        ease: "elastic.out(1, 0.5)",
-      }
-    );
-
-    // Animate metrics container
-    gsap.fromTo(
-      ".metrics-container",
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    );
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="relative w-full py-28 overflow-hidden">
