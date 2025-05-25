@@ -124,7 +124,7 @@ const RetreatsSection: React.FC = () => {
 
   return (
     <motion.section
-      className="relative py-24"
+      className="relative h-auto py-24 overflow-hidden bg-gradient-to-br from-black via-[#0c1425] to-[#0c133a]"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
