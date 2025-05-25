@@ -127,7 +127,7 @@ const RetreatsSection: React.FC = () => {
       <p className="text-white text-5xl">hi</p>
       <motion.section
         className="relative h-auto py-24 overflow-hidden bg-gradient-to-br from-black via-[#0c1425] to-[#0c133a]"
-        initial={{ opacity: 0, y: 60 }}
+        initial={{ opacity: 1, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -141,8 +141,8 @@ const RetreatsSection: React.FC = () => {
           {/* Mission Statement */}
           <motion.div
             className="text-center mb-10"
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 1, y: -30 }}
+            whileInView={{ opacity: 1, y: 1 }}
             transition={{ delay: 0.1, duration: 0.7 }}
           >
             <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-4 tracking-tight">
