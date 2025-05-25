@@ -102,7 +102,7 @@ const GallerySection: React.FC = () => {
   const closeModal = () => setModalOpen(false);
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative  overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0c1425] to-[#0c133a] -z-10"></div>
       {/* Decorative backgrounds */}
