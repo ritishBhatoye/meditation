@@ -51,7 +51,14 @@ const GALLERY_IMAGES = [
   },
 ];
 
-const CATEGORIES = ["All", "Events", "Workshops", "Studio", "Testimonials"];
+const CATEGORIES = [
+  "All",
+  "Events",
+  "Workshops",
+  "Studio",
+  "Treatment",
+  "Testimonials",
+];
 
 const gridVariants = {
   hidden: { opacity: 0, y: 30 },
