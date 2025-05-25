@@ -8,6 +8,7 @@ import Tabs from "@/components/home/Tabs";
 import RetreatsSection from "@/components/home/RetreatsSection";
 import ContactUs from "@/components/home/ContactUs";
 import Newsletter from "@/components/home/Newsletter";
+import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <ContactUs />
         <Faq />
       </div>
+      <Footer />
     </div>
   );
 }
