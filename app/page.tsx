@@ -6,18 +6,24 @@ import HeroSection from "@/components/home/HeroSection";
 import MetricsDisplay from "@/components/home/MetricDisplay";
 import Tabs from "@/components/home/Tabs";
 import RetreatsSection from "@/components/home/RetreatsSection";
+import ContactUs from "@/components/home/ContactUs";
+import Newsletter from "@/components/home/Newsletter";
 
 export default function Home() {
   return (
     <div>
       <HeroSection />
-      <RetreatsSection />
-      <Tabs />
-      <MetricsDisplay />
-      <HomeAboutUs />
-      <GallerySection />
-      <ClientTestimonials />
-      <Faq />
+      <div className="bg-gradient-to-br from-black via-[#0c1425] to-[#0c133a]">
+        <RetreatsSection />
+        <Tabs />
+        <MetricsDisplay />
+        <HomeAboutUs />
+        <GallerySection />
+        <ClientTestimonials />
+        <Newsletter />
+        <ContactUs />
+        <Faq />
+      </div>
     </div>
   );
 }
