@@ -5,6 +5,7 @@ import { retreats, Retreat } from "@/utils/dummyData/retreats";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import CalBookingModal from "../global/CalBookingModal";
 
 function getCountdown(startDate: string) {
   const now = new Date();
@@ -87,6 +88,8 @@ const RetreatsSection: React.FC = () => {
   const [carouselIdx, setCarouselIdx] = useState(0);
   const [carouselDir, setCarouselDir] = useState(0); // -1 for left, 1 for right
   const [testimonialIdx, setTestimonialIdx] = useState(0);
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [selectedRetreat, setSelectedRetreat] = useState<Retreat | null>(null);
 
   const filteredRetreats =
     selectedCategory === "All"
@@ -450,7 +453,10 @@ const RetreatsSection: React.FC = () => {
                   <div className="flex gap-3 mt-auto">
                     <Button
                       className="bg-teal-600 hover:bg-teal-700 text-white font-semibold flex-1"
-                      onClick={() => alert("Booking form coming soon!")}
+                      onClick={() => {
+                        setSelectedRetreat(retreat);
+                        setBookingOpen(true);
+                      }}
                     >
                       Book Now
                     </Button>
@@ -528,6 +534,11 @@ const RetreatsSection: React.FC = () => {
           </div>
         </motion.div>
       </div>
+      <CalBookingModal
+        open={bookingOpen}
+        onClose={() => setBookingOpen(false)}
+        retreat={selectedRetreat}
+      />
     </motion.section>
   );
 };
