@@ -63,11 +63,11 @@ export default function ContactUs() {
       <div className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-teal-500/5 -z-5 blur-3xl"></div>
       <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-purple-500/5 -z-5 blur-3xl"></div>
 
-      <div className="w-full mx-auto relative z-10 flex flex-col md:flex-row gap-16 items-start justify-between px-4 md:px-12 lg:px-24 py-8">
+      <div className="w-full mx-auto relative z-10 flex flex-col md:flex-row gap-10 md:gap-16 items-start justify-between px-2 sm:px-4 md:px-12 lg:px-24 py-6 sm:py-8">
         {/* Left: Contact Form */}
         <div className="flex-1 w-full max-w-lg">
           <motion.p
-            className="text-teal-400 mb-3 text-lg"
+            className="text-teal-400 mb-2 sm:mb-3 text-base sm:text-lg"
             style={{ fontFamily: "'Homemade Apple', cursive" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -75,10 +75,10 @@ export default function ContactUs() {
           >
             Get in Touch
           </motion.p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
             Contact Us
           </h2>
-          <p className="text-gray-300 mb-6 text-lg">
+          <p className="text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
             We're here to support your wellness journey. Reach out to us anytime
             for personalized guidance, appointments, or just to say hello!
           </p>
@@ -197,7 +197,7 @@ export default function ContactUs() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white py-3 rounded-lg font-medium hover:from-teal-600 hover:to-teal-700 transition-colors duration-200 flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white py-2 sm:py-3 rounded-lg font-medium hover:from-teal-600 hover:to-teal-700 transition-colors duration-200 flex items-center justify-center gap-2 text-base sm:text-lg"
               >
                 <Send className="w-5 h-5" />
                 Send Message

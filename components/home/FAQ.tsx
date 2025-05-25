@@ -170,9 +170,9 @@ const Faq = () => {
       </motion.div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 sm:mb-12 md:mb-14">
           <motion.p
-            className="text-teal-400 mb-3"
+            className="text-teal-400 mb-2 sm:mb-3 text-base sm:text-lg"
             style={{ fontFamily: "&apos;Homemade Apple&apos;, cursive" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -182,12 +182,12 @@ const Faq = () => {
           </motion.p>
           <h2
             ref={headingRef}
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
           >
             Frequently Asked Questions
           </h2>
           <motion.p
-            className="text-gray-300 max-w-2xl mx-auto"
+            className="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
@@ -195,10 +195,10 @@ const Faq = () => {
             Explore our comprehensive guide to common questions about yoga,
             meditation, and therapeutic practices.
           </motion.p>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-purple-500 mx-auto mt-6"></div>
+          <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-teal-500 to-purple-500 mx-auto mt-4 sm:mt-6"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 md:gap-8">
           {/* Categories */}
           <div className="lg:col-span-1">
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10 shadow-xl">
@@ -236,7 +236,7 @@ const Faq = () => {
 
           {/* Questions and Answers */}
           <div className="lg:col-span-3">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 shadow-xl">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10 shadow-xl">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
@@ -328,19 +328,19 @@ const Faq = () => {
 
         {/* Contact prompt */}
         <motion.div
-          className="mt-16 text-center"
+          className="mt-10 sm:mt-14 md:mt-16 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-gray-300 mb-4">
+          <p className="text-gray-300 mb-3 sm:mb-4 text-base sm:text-lg">
             Still have questions? We're here to help.
           </p>
           <motion.button
             whileHover={{ scale: 1.05, backgroundColor: "#0f766e" }}
             whileTap={{ scale: 0.98 }}
-            className="px-8 py-3 bg-teal-700 text-white rounded-xl shadow-lg"
+            className="px-6 sm:px-8 py-2 sm:py-3 bg-teal-700 text-white rounded-xl shadow-lg text-base sm:text-lg"
           >
             Contact Our Support Team
           </motion.button>

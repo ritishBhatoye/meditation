@@ -63,23 +63,23 @@ const HomeAboutUs = () => {
 
       {/* Content */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-14 md:mb-16">
           <h4
-            className="text-teal-400 mb-3 tracking-wide"
+            className="text-teal-400 mb-2 sm:mb-3 tracking-wide text-base sm:text-lg md:text-xl"
             style={{ fontFamily: "&apos;Homemade Apple&apos;, cursive" }}
           >
             Journey With Us
           </h4>
           <h2
             ref={headingRef}
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
           >
             Discover Your Inner Balance
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-purple-500 mx-auto"></div>
+          <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-teal-500 to-purple-500 mx-auto"></div>
         </div>
 
-        <div className="space-y-24">
+        <div className="space-y-16 sm:space-y-20 md:space-y-24">
           {MeditationHomeAboutUsData.map((aboutUs, index) => (
             <motion.div
               key={aboutUs.id}
@@ -93,25 +93,23 @@ const HomeAboutUs = () => {
                 subTitle={aboutUs.subTitle}
                 description={aboutUs.description}
                 imgSrc={aboutUs.imgSrc}
-                className="p-6 sm:p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl"
-                containerWithImageClassName={`grid grid-cols-1 ${
-                  aboutUs.id % 2 === 0 ? "md:grid-cols-2" : "md:grid-cols-2"
-                } gap-8 w-full items-center justify-between`}
+                className="p-4 sm:p-6 md:p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl"
+                containerWithImageClassName={`grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full items-center justify-between`}
                 dir={`${aboutUs.id % 2 === 0 ? "rtl" : "ltr"}`}
                 ctaLabel={aboutUs.id !== 2 ? aboutUs.ctaLabel : ""}
-                sectionClassName="items-start text-white space-y-4"
+                sectionClassName="items-start text-white space-y-3 sm:space-y-4"
                 ctaClassName={
                   aboutUs.id !== 2
-                    ? "px-8 py-4 bg-teal-600 hover:bg-teal-700 text-white rounded-xl transition-colors shadow-lg"
+                    ? "px-6 sm:px-8 py-3 sm:py-4 bg-teal-600 hover:bg-teal-700 text-white rounded-xl transition-colors shadow-lg text-base sm:text-lg"
                     : "bg"
                 }
               />
 
               {/* Decorative line after each section except the last */}
               {index < MeditationHomeAboutUsData.length - 1 && (
-                <div className="w-full flex justify-center mt-12">
+                <div className="w-full flex justify-center mt-8 sm:mt-10 md:mt-12">
                   <motion.div
-                    className="w-1/2 h-px bg-white/10"
+                    className="w-1/3 sm:w-1/2 h-px bg-white/10"
                     initial={{ width: 0 }}
                     whileInView={{ width: "50%" }}
                     viewport={{ once: true }}
@@ -125,13 +123,13 @@ const HomeAboutUs = () => {
 
         {/* Additional meditation benefits section */}
         <motion.div
-          className="mt-24 p-8 rounded-2xl bg-gradient-to-r from-black/50 to-purple-900/20 backdrop-blur-sm border border-white/10"
+          className="mt-16 sm:mt-20 md:mt-24 p-4 sm:p-6 md:p-8 rounded-2xl bg-gradient-to-r from-black/50 to-purple-900/20 backdrop-blur-sm border border-white/10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             <div className="text-center p-6">
               <motion.div
                 className="w-16 h-16 mx-auto mb-4 text-teal-400"

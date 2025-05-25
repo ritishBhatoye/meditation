@@ -109,10 +109,10 @@ const GallerySection: React.FC = () => {
       <div className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-teal-500/5 -z-5 blur-3xl"></div>
       <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-purple-500/5 -z-5 blur-3xl"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-14">
+      <div className="container mx-auto px-2 sm:px-4 lg:px-8 relative z-10">
+        <div className="text-center mb-8 sm:mb-12 md:mb-14">
           <motion.p
-            className="text-teal-400 mb-3"
+            className="text-teal-400 mb-2 sm:mb-3 text-base sm:text-lg"
             style={{ fontFamily: "'Homemade Apple', cursive" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -120,11 +120,11 @@ const GallerySection: React.FC = () => {
           >
             Gallery
           </motion.p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
             Featured Moments
           </h2>
           <motion.p
-            className="text-gray-300 max-w-2xl mx-auto"
+            className="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
@@ -132,11 +132,11 @@ const GallerySection: React.FC = () => {
             Explore our curated gallery of events, workshops, and studio
             moments.
           </motion.p>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-purple-500 mx-auto mt-6"></div>
+          <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-teal-500 to-purple-500 mx-auto mt-4 sm:mt-6"></div>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-10">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-10">
           {CATEGORIES.map((cat) => (
             <motion.button
               key={cat}
@@ -169,7 +169,7 @@ const GallerySection: React.FC = () => {
 
         {/* Gallery Grid */}
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-6"
           variants={gridVariants}
           initial="hidden"
           animate="visible"
