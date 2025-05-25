@@ -15,7 +15,7 @@ const HomeAboutUs = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden py-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden py-10 sm:py-14 md:py-20"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a2e] to-[#0c133a] z-0"></div>
@@ -25,7 +25,7 @@ const HomeAboutUs = () => {
 
       {/* Decorative elements */}
       <motion.div
-        className="absolute top-20 left-20 w-64 h-64 rounded-full bg-teal-900/10 z-10 hidden md:block"
+        className="absolute top-10 left-4 sm:top-20 sm:left-20 w-32 h-32 sm:w-64 sm:h-64 rounded-full bg-teal-900/10 z-10 hidden md:block"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.1, 0.2, 0.1],
@@ -38,7 +38,7 @@ const HomeAboutUs = () => {
       />
 
       <motion.div
-        className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-purple-900/10 z-10 hidden md:block"
+        className="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-40 h-40 sm:w-80 sm:h-80 rounded-full bg-purple-900/10 z-10 hidden md:block"
         animate={{
           scale: [1.2, 1, 1.2],
           opacity: [0.2, 0.1, 0.2],
@@ -52,7 +52,7 @@ const HomeAboutUs = () => {
 
       {/* SVG lotus decoration */}
       <motion.div
-        className="absolute top-1/4 right-10 text-teal-500/10 z-10 hidden lg:block"
+        className="absolute top-1/4 right-2 sm:right-10 text-teal-500/10 z-10 hidden lg:block"
         animate={{ rotate: [0, 360] }}
         transition={{ repeat: Infinity, duration: 120, ease: "linear" }}
       >
@@ -62,8 +62,8 @@ const HomeAboutUs = () => {
       </motion.div>
 
       {/* Content */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
-        <div className="text-center mb-10 sm:mb-14 md:mb-16">
+      <div className="container max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 z-20">
+        <div className="text-center mb-10 sm:mb-16">
           <h4
             className="text-teal-400 mb-2 sm:mb-3 tracking-wide text-base sm:text-lg md:text-xl"
             style={{ fontFamily: "&apos;Homemade Apple&apos;, cursive" }}
@@ -72,14 +72,14 @@ const HomeAboutUs = () => {
           </h4>
           <h2
             ref={headingRef}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
+            className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6"
           >
             Discover Your Inner Balance
           </h2>
           <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-teal-500 to-purple-500 mx-auto"></div>
         </div>
 
-        <div className="space-y-16 sm:space-y-20 md:space-y-24">
+        <div className="space-y-16 sm:space-y-24">
           {MeditationHomeAboutUsData.map((aboutUs, index) => (
             <motion.div
               key={aboutUs.id}
@@ -97,7 +97,7 @@ const HomeAboutUs = () => {
                 containerWithImageClassName={`grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full items-center justify-between`}
                 dir={`${aboutUs.id % 2 === 0 ? "rtl" : "ltr"}`}
                 ctaLabel={aboutUs.id !== 2 ? aboutUs.ctaLabel : ""}
-                sectionClassName="items-start text-white space-y-3 sm:space-y-4"
+                sectionClassName="items-start text-white space-y-2 sm:space-y-4"
                 ctaClassName={
                   aboutUs.id !== 2
                     ? "px-6 sm:px-8 py-3 sm:py-4 bg-teal-600 hover:bg-teal-700 text-white rounded-xl transition-colors shadow-lg text-base sm:text-lg"
@@ -107,7 +107,7 @@ const HomeAboutUs = () => {
 
               {/* Decorative line after each section except the last */}
               {index < MeditationHomeAboutUsData.length - 1 && (
-                <div className="w-full flex justify-center mt-8 sm:mt-10 md:mt-12">
+                <div className="w-full flex justify-center mt-8 sm:mt-12">
                   <motion.div
                     className="w-1/3 sm:w-1/2 h-px bg-white/10"
                     initial={{ width: 0 }}
@@ -123,16 +123,16 @@ const HomeAboutUs = () => {
 
         {/* Additional meditation benefits section */}
         <motion.div
-          className="mt-16 sm:mt-20 md:mt-24 p-4 sm:p-6 md:p-8 rounded-2xl bg-gradient-to-r from-black/50 to-purple-900/20 backdrop-blur-sm border border-white/10"
+          className="mt-16 sm:mt-24 p-4 sm:p-8 rounded-2xl bg-gradient-to-r from-black/50 to-purple-900/20 backdrop-blur-sm border border-white/10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="text-center p-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div className="text-center p-4 sm:p-6">
               <motion.div
-                className="w-16 h-16 mx-auto mb-4 text-teal-400"
+                className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-3 sm:mb-4 text-teal-400"
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
                 <svg
@@ -147,18 +147,18 @@ const HomeAboutUs = () => {
                   <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                 </svg>
               </motion.div>
-              <h3 className="text-white text-xl font-semibold mb-3">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-white">
                 Mindful Awareness
               </h3>
-              <p className="text-gray-300">
+              <p className="text-gray-300 text-sm sm:text-base">
                 Develop a deeper connection to the present moment through guided
                 meditation practices.
               </p>
             </div>
 
-            <div className="text-center p-6">
+            <div className="text-center p-4 sm:p-6">
               <motion.div
-                className="w-16 h-16 mx-auto mb-4 text-teal-400"
+                className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-3 sm:mb-4 text-teal-400"
                 whileHover={{ scale: 1.1, rotate: -5 }}
               >
                 <svg
@@ -174,18 +174,18 @@ const HomeAboutUs = () => {
                   <path d="M14 18a4 4 0 0 0 0-8"></path>
                 </svg>
               </motion.div>
-              <h3 className="text-white text-xl font-semibold mb-3">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-white">
                 Stress Reduction
               </h3>
-              <p className="text-gray-300">
+              <p className="text-gray-300 text-sm sm:text-base">
                 Learn techniques that have been proven to lower cortisol levels
                 and reduce daily stress.
               </p>
             </div>
 
-            <div className="text-center p-6">
+            <div className="text-center p-4 sm:p-6">
               <motion.div
-                className="w-16 h-16 mx-auto mb-4 text-teal-400"
+                className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-3 sm:mb-4 text-teal-400"
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
                 <svg
@@ -201,10 +201,10 @@ const HomeAboutUs = () => {
                   <path d="M8 12h8"></path>
                 </svg>
               </motion.div>
-              <h3 className="text-white text-xl font-semibold mb-3">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-white">
                 Self-Healing
               </h3>
-              <p className="text-gray-300">
+              <p className="text-gray-300 text-sm sm:text-base">
                 Activate your body's natural healing abilities through
                 specialized breathing and meditation.
               </p>

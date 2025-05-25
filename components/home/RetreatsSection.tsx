@@ -124,7 +124,7 @@ const RetreatsSection: React.FC = () => {
 
   return (
     <motion.section
-      className="relative h-auto py-24 overflow-hidden bg-gradient-to-br from-black via-[#0c1425] to-[#0c133a]"
+      className="relative h-auto overflow-hidden bg-gradient-to-br from-black via-[#0c1425] to-[#0c133a]"
       initial={{ opacity: 1, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -135,7 +135,7 @@ const RetreatsSection: React.FC = () => {
       <div className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-teal-500/5 -z-5 blur-3xl"></div>
       <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-purple-500/5 -z-5 blur-3xl"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container py-10 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Mission Statement */}
         <motion.div
           className="text-center mb-10"
