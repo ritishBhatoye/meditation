@@ -14,7 +14,6 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-
       <RetreatsSection />
       <Tabs />
       <MetricsDisplay />
@@ -24,7 +23,6 @@ export default function Home() {
       <Newsletter />
       <ContactUs />
       <Faq />
-
       <Footer />
     </div>
   );
