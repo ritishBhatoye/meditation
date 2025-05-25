@@ -1,0 +1,11 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as RetreatsSection } from "./RetreatsSection";
+export { default as Tabs } from "./Tabs";
+export { default as MetricDisplay } from "./MetricDisplay";
+export { default as AboutUs } from "./AboutUs";
+export { default as GallerySection } from "./GallerySection";
+export { ClientTestimonials } from "./ClientTestimonials";
+export { default as Newsletter } from "./Newsletter";
+export { default as ContactUs } from "./ContactUs";
+export { default as Faq } from "./FAQ";
+export { default as Footer } from "../global/Footer";

@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import InfoCard from "@/components/elements/InfoCard";
 import { MeditationHomeAboutUsData } from "@/utils/dummyData/aboutUs";
 
-const HomeAboutUs = () => {
+const AboutUs = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
@@ -66,7 +66,7 @@ const HomeAboutUs = () => {
         <div className="text-center mb-10 sm:mb-16">
           <h4
             className="text-teal-400 mb-2 sm:mb-3 tracking-wide text-base sm:text-lg md:text-xl"
-            style={{ fontFamily: "&apos;Homemade Apple&apos;, cursive" }}
+            style={{ fontFamily: "'Homemade Apple', cursive" }}
           >
             Journey With Us
           </h4>
@@ -216,4 +216,4 @@ const HomeAboutUs = () => {
   );
 };
 
-export default HomeAboutUs;
+export default AboutUs;
