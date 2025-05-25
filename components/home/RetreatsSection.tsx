@@ -185,6 +185,20 @@ const RetreatsSection: React.FC = () => {
         </motion.div>
 
         {/* Retreat Experiences Carousel */}
+        <div className="text-center mb-4">
+          <div className="inline-block bg-teal-900/40 text-teal-200 rounded-full px-5 py-2 text-sm font-semibold mb-2">
+            <span role="img" aria-label="healing">
+              💚
+            </span>{" "}
+            Each experience is designed to nurture your mind, ease anxiety, and
+            support emotional healing in a peaceful, supportive environment.
+          </div>
+          <p className="text-gray-300 text-base max-w-xl mx-auto mt-2">
+            Whether you're seeking relief from stress, depression, or simply
+            want to reconnect with yourself, our core retreat experiences offer
+            proven pathways to inner peace and transformation.
+          </p>
+        </div>
         <div className="mb-16">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-2">
             <span role="img" aria-label="yoga">
@@ -224,6 +238,12 @@ const RetreatsSection: React.FC = () => {
                     className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                     draggable={false}
                   />
+                  <div className="absolute top-4 left-4 bg-teal-700/80 text-white text-xs font-semibold px-4 py-1 rounded-full shadow-lg flex items-center gap-2 z-10">
+                    <span role="img" aria-label="mind">
+                      🧠
+                    </span>
+                    Mental Wellness Focus
+                  </div>
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300 flex flex-col items-center justify-center">
                     <div className="backdrop-blur-sm bg-black/30 rounded-xl px-4 py-2 mb-3 text-lg md:text-xl font-semibold text-white shadow-lg">
                       {coreExperiences[carouselIdx].title}
