@@ -14,17 +14,17 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <div className="bg-gradient-to-br from-black via-[#0c1425] to-[#0c133a]">
-        <RetreatsSection />
-        <Tabs />
-        <MetricsDisplay />
-        <HomeAboutUs />
-        <GallerySection />
-        <ClientTestimonials />
-        <Newsletter />
-        <ContactUs />
-        <Faq />
-      </div>
+
+      <RetreatsSection />
+      <Tabs />
+      <MetricsDisplay />
+      <HomeAboutUs />
+      <GallerySection />
+      <ClientTestimonials />
+      <Newsletter />
+      <ContactUs />
+      <Faq />
+
       <Footer />
     </div>
   );
